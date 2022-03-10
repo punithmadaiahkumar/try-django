@@ -24,19 +24,19 @@ Django has so many features that just work out of the box: user authentication, 
 + generate secret key: `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`
 
 ### Git and Github Commands:
-+ git repo creating: `crete a public/private repo in github `
-+ delete ur .git from ur local directory:		`rm -ef .git (mac)` | `rmdir .git (windows)` 
-+ git initilize:	`git init`
-+ git add origin: 	`git remote add origin <url of github repo>.git`
-+ git status:		`git status (to track ur file upload in git repo)`
-+ git add: (adding file one by one)		`git add <filename>/ `
-+ git add: (adding all file together)	`git add --all (mac)` | `git add -A (windows)`
-+ git commit:		`git commit "<type you commit message>"`
++ git repo creating:   `crete a public/private repo in github `
++ delete ur .git file/folder from ur local directory:		`rm -ef .git (mac)` | `rmdir .git (windows)` 
++ to start initilize:	`git init`
++ to add origin: 	`git remote add origin <url of github repo>.git`
++ to check status:		`git status (to track ur file upload in git repo)`
++ to add particular file:   `git add <filename>/ `
++ to add all file:   `git add --all (mac)` | `git add -A (windows)`
++ commit ur changes:		`git commit "<type you commit message>"`
 + reset commit:		`git reset <commit id> --hard`
-+ git remote:		`git remote (this will tell where ur repo is)`
-+ git remote: -v	`git remote -v (this give a robost description on origin)`
++ check your remote:		`git remote (this will tell where ur repo is)`
++ describe your remote: -v	`git remote -v (this give a robost description on origin)`
 + delete/remove origin:		`git remote remove <name>` 
-+ git push:		`git push <ur branch>` (if u have a specified branch add that or, use main or master to push)
++ push you commit:		`git push <ur branch>` (if u have a specified branch add that or, use main or master to push)
 + to check log:		`git log`
 
 ### To execute the project:
