@@ -23,21 +23,28 @@ Django has so many features that just work out of the box: user authentication, 
 + create superuser: `python manage.py createsuperuser`
 + generate secret key: `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`
 
+### Github Configure:
+Configure you Github in you command prompt/terminal for initilizing you git process.
++ configure name:   `git config user.name "<your name>"`
++ configure email:  `git config user.email "<you email>"`
+
 ### Git and Github Commands:
 + git repo creating:   `crete a public/private repo in github `
 + delete ur .git file/folder from ur local directory:		`rm -ef .git (mac)` | `rmdir .git (windows)` 
 + to start initilize:	`git init`
-+ to add origin: 	`git remote add origin <url of github repo>.git`
++ to add origin/host: 	`git remote add origin <url of github repo>.git`
 + to check status:		`git status (to track ur file upload in git repo)`
 + to add particular file:   `git add <filename>/ `
 + to add all file:   `git add --all (mac)` | `git add -A (windows)`
 + commit ur changes:		`git commit "<type you commit message>"`
 + reset commit:		`git reset <commit id> --hard`
-+ check your remote:		`git remote (this will tell where ur repo is)`
-+ describe your remote: -v	`git remote -v (this give a robost description on origin)`
-+ delete/remove origin:		`git remote remove <name>` 
++ check your remote host:	`git remote (this will tell where ur repo is)`
++ describe your remote host:     `git remote -v (this give a robost description on host)`
++ delete/remove host:		`git remote remove <name>` 
 + push you commit:		`git push <ur branch>` (if u have a specified branch add that or, use main or master to push)
 + to check log:		`git log`
+
+
 
 ### To execute the project:
 + Run `python manage.py runserver`
