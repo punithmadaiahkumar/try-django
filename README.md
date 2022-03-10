@@ -13,7 +13,7 @@ Django has so many features that just work out of the box: user authentication, 
 + upgrade pip: `python -m pip install --upgrade pip`
 + install requirements.txt file: `pip install -r requirements.txt`
 
-### Django command:
+### Django commands:
 + management command: `python -m django | django-admin`
 + start project: `python -m django startproject <proj_name> .`
 + runserver: `python manage.py runserver`
@@ -22,6 +22,22 @@ Django has so many features that just work out of the box: user authentication, 
 + migrate: `python manage.py migrate`
 + create superuser: `python manage.py createsuperuser`
 + generate secret key: `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`
+
+### Git and Github Commands:
++ git repo creating: `crete a public/private repo in github `
++ delete ur .git from ur local directory:		`rm -ef .git (mac)` | `rmdir .git (windows)` 
++ git initilize:	`git init`
++ git add origin: 	`git remote add origin <url of github repo>.git`
++ git status:		`git status (to track ur file upload in git repo)`
++ git add: (adding file one by one)		`git add <filename>/ `
++ git add: (adding all file together)	`git add --all (mac)` | `git add -A (windows)`
++ git commit:		`git commit "<type you commit message>"`
++ reset commit:		`git reset <commit id> --hard`
++ git remote:		`git remote (this will tell where ur repo is)`
++ git remote: -v	`git remote -v (this give a robost description on origin)`
++ delete/remove origin:		`git remote remove <name>` 
++ git push:		`git push <ur branch>` (if u have a specified branch add that or, use main or master to push)
++ to check log:		`git log`
 
 ### To execute the project:
 + Run `python manage.py runserver`
