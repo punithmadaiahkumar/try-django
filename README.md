@@ -49,7 +49,7 @@ Configure you Github in you command prompt/terminal for initilizing you git proc
 ### To execute the project:
 + Run `python manage.py runserver`
 
-### Tutorials:
+### Reference\Tutorials:
 + CodingEntrepreneurs [YouTube](https://www.youtube.com/playlist?list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL)
 
 + Refrence to Deployment [App Platform](https://www.codingforentrepreneurs.com/blog/prepare-django-for-digital-ocean-app-platform)
