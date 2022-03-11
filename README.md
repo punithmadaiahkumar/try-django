@@ -22,6 +22,7 @@ Django has so many features that just work out of the box: user authentication, 
 + migrate: `python manage.py migrate`
 + create superuser: `python manage.py createsuperuser`
 + generate secret key: `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`
++ shell:    `python manage.py shell`
 
 ### Github Configure:
 Configure you Github in you command prompt/terminal for initilizing you git process.
@@ -55,3 +56,5 @@ Configure you Github in you command prompt/terminal for initilizing you git proc
 + Refrence to Deployment [App Platform](https://www.codingforentrepreneurs.com/blog/prepare-django-for-digital-ocean-app-platform)
 
 + To know more about Version Control[GIT Version Control](https://www.codingforentrepreneurs.com/blog/version-control-with-git-basics-for-try-django-32)
+
++ Django pre_save and post_save [django doc](https://docs.djangoproject.com/en/4.0/ref/signals/)
