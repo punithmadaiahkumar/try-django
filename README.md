@@ -58,3 +58,5 @@ Configure you Github in you command prompt/terminal for initilizing you git proc
 + To know more about Version Control[GIT Version Control](https://www.codingforentrepreneurs.com/blog/version-control-with-git-basics-for-try-django-32)
 
 + Django pre_save and post_save [django doc](https://docs.djangoproject.com/en/4.0/ref/signals/)
+
++ Refrence for QuerySets and Lookups, Generating Secret Key, Writing & Reading Data via models [Refrence](/refrences)
