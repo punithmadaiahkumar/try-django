@@ -51,12 +51,14 @@ Configure you Github in you command prompt/terminal for initilizing you git proc
 + Run `python manage.py runserver`
 
 ### Reference\Tutorials:
-+ CodingEntrepreneurs [YouTube](https://www.youtube.com/playlist?list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL)
++ Local refrence for QuerySets and Lookups, Generating Secret Key, Writing & Reading Data via models [Refrences](/refrences).
 
-+ Refrence to Deployment [App Platform](https://www.codingforentrepreneurs.com/blog/prepare-django-for-digital-ocean-app-platform)
++ CodingEntrepreneurs [YouTube](https://www.youtube.com/playlist?list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL).
 
-+ To know more about Version Control[GIT Version Control](https://www.codingforentrepreneurs.com/blog/version-control-with-git-basics-for-try-django-32)
++ Refrence to Deployment [App Platform](https://www.codingforentrepreneurs.com/blog/prepare-django-for-digital-ocean-app-platform).
 
-+ Django pre_save and post_save [django doc](https://docs.djangoproject.com/en/4.0/ref/signals/)
++ To know more about Version Control [GIT Version Control](https://www.codingforentrepreneurs.com/blog/version-control-with-git-basics-for-try-django-32).
 
-+ Refrence for QuerySets and Lookups, Generating Secret Key, Writing & Reading Data via models [Refrence](/refrences)
++ Django pre_save and post_save [Django doc](https://docs.djangoproject.com/en/4.0/ref/signals/).
+
+
