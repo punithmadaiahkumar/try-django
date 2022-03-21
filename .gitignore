@@ -135,7 +135,9 @@ dmypy.json
 .pyre/
 
 #recipe
-recipes/__pycache__/
+recipes/
+__pycache__/
 
 #articles
-articles/__pycache__
+articles/
+__pycache__/
