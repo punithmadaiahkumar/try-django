@@ -9,7 +9,7 @@ from .validators import validate_unit_of_measure
 """
 - Global
     - Ingredients
-    - 
+    - Recipes
 - User
     - Ingredients
     - Recipes
@@ -29,12 +29,18 @@ class Recipe(models.Model):
     def get_absolute_url(self):
         return reverse("recipes:detail", kwargs={"id": self.id})
 
+    def get_edit_url(self):
+        return reverse("recipes:update", kwargs={"id": self.id})
+
+    def get_ingredients_children(self):
+        return self.recipeingredient_set.all()
+
 class RecipeIngredient(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     name = models.CharField(max_length=220)
     description = models.TextField(blank=True, null=True)
     quantity = models.CharField(max_length=50)  # 1 1/4
-    qualtity_as_float = models.FloatField(blank=True, null=True)
+    quantity_as_float = models.FloatField(blank=True, null=True)
     # pounds, lbs, oz, grams etc
     unit = models.CharField(max_length=50, validators=[validate_unit_of_measure])
     directions = models.TextField(blank=True, null=True)
@@ -66,9 +72,9 @@ class RecipeIngredient(models.Model):
         qty = self.quantity
         qty_as_float, qty_as_float_success = number_str_to_float(qty) 
         if qty_as_float_success:
-            self.qualtity_as_float = qty_as_float
+            self.quantity_as_float = qty_as_float
         else:
-            self.qualtity_as_float = None
+            self.quantity_as_float = None
         super().save(*args, **kwargs)
 #class RecipeImage():
 #    recipe = models.ForeignKey(Recipe)

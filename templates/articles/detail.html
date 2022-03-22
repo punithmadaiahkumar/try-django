@@ -4,7 +4,7 @@
 {% block content %}
 
 <h1>{{ object.title }}</h1>
-<p>Author: {{ object.user }} {% if request.user == object.user %} This is you! {% endif %}</p>
+<p>Author: {{ object.user.username }}</p>
 <p>{{ object.content }}</p>
 
 
