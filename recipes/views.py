@@ -1,5 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render, get_object_or_404
+from matplotlib.style import context
+from pytest import Instance
 
 from .forms import RecipeForm
 from .models import Recipe
@@ -27,20 +29,27 @@ def recipe_detail_view(request, id=None):
 @login_required
 def recipe_create_view(request):
     form = RecipeForm(request.POST or None)
+    context ={
+        "form": form
+    }
     if form.is_valid():
         obj = form.save(commit=False)
         obj.user = request.user
         obj.save()
         return redirect(obj.get_absolute_url())
-    return
+    return render(request, "recipes/create-update.html", context)
 
 
 @login_required
 def recipe_update_view(request, id=None):
-    form = RecipeForm(request.POST or None)
+    
     obj = get_object_or_404(Recipe, id=id, user=request.user)
+    form = RecipeForm(request.POST or None, instance=obj)
     context = {
         "form": form,
         "object": obj
     }
-    return render(request, "recipes/detail.html", context)
+    if form.is_valid():
+        obj.save()
+        context['message'] = 'Data saved.'
+    return render(request, "recipes/create-update.html", context) 
