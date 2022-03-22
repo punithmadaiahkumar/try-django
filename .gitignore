@@ -139,5 +139,7 @@ recipes/ __pycache__/
 
 
 #articles
-articles/
-__pycache__/
+articles/ __pycache__/
+
+#trydjango
+trydjango/ __pycache__/

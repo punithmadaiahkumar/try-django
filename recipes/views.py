@@ -1,7 +1,5 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render, get_object_or_404
-from matplotlib.style import context
-from pytest import Instance
 
 from .forms import RecipeForm
 from .models import Recipe
