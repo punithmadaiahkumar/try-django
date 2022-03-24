@@ -23,6 +23,8 @@ Django has so many features that just work out of the box: user authentication, 
 + create superuser: `python manage.py createsuperuser`
 + generate secret key: `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`
 + shell:    `python manage.py shell`
++ data dump:    `python manage.py dumpdata <filename> --indent 4`
++ data dump to folder:  `python manage.py dumpdata recipes --indent 4 > <directory name>/<filename>.json`
 
 ### Github Configure:
 Configure you Github in you command prompt/terminal for initilizing you git process.
