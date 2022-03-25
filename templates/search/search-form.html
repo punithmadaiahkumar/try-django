@@ -1,4 +1,8 @@
 <form action='/search/' method='GET'>
-    <input type='text' name='q'/>
+    <input type='text' name='q' value='{{ request.GET.q }}'/>
+    <select name='type'>
+        <option value='article'>Articles</option>
+        <option value='recipes'>Recipes</option>
+    </select>
     <input type='submit' />
 </form>
