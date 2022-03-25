@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from matplotlib.style import context
 
 # Create your views here.
 def search_view(request):
@@ -8,7 +7,7 @@ def search_view(request):
     context = {
         "query":query
     }
-    template = "search/results.html"
+    template = "search/results-view.html"
     if request.htmx:
         template = "search/partials/results.html"
     return render(request, template, context)
