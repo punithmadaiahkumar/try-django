@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third-party
     'django_htmx',
-    'storages',
+    #'storages',
     # internal
     'articles',
     'recipes',
@@ -164,6 +164,8 @@ STATIC_FILES_DIRS = [
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles-cdn" # in production, we want cdn
+
+MEDIA_ROOT = BASE_DIR / "staticfiles-cdn" / "uploads"
 
 #from .cdn.conf import * # noqa
 

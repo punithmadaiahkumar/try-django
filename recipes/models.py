@@ -67,6 +67,17 @@ class Recipe(models.Model):
     def get_ingredients_children(self):
         return self.recipeingredient_set.all()
 
+
+
+
+class RecipeIngredientImage(models.Model):
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="recipes/") # path/to/the/actual/file.png
+    # image
+    # extracted_text
+
+
+
 class RecipeIngredient(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     name = models.CharField(max_length=220)
