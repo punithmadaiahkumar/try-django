@@ -1,0 +1,15 @@
+body{
+    color: red !important
+}
+.htmx-indicator{
+    display: none;
+}
+.htmx-request .htmx-indicator {
+    display: inline;
+}
+.htmk-inverted-indicator {
+    display: inline;
+}
+.htmx-request .htmx-inverted-indicator {
+    display: none;
+}

@@ -1,21 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <script src="https://unpkg.com/htmx.org@1.7.0"></script>
-        <style>
-            .htmx-indicator{
-                display: none;
-            }
-            .htmx-request .htmx-indicator {
-                display: inline;
-            }
-            .htmk-inverted-indicator {
-                display: inline;
-            }
-            .htmx-request .htmx-inverted-indicator {
-                display: none;
-            }
-        </style>
+        <link rel="stylesheet" href='{% static "recipes/recipes-htmx.css" %}' />
     </head>
     <body>
         <h1>Hello World</h1>
