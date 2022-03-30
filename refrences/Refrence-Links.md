@@ -20,3 +20,5 @@ ureg['feet']
 + Widgets Documentation [Widgets](https://docs.djangoproject.com/en/4.0/ref/forms/widgets/)
 
 + HTMX Refrence[HTMX](https://htmx.org/)
+
++ Django Model Field [link](https://docs.djangoproject.com/en/4.0/ref/models/fields/)
