@@ -47,6 +47,15 @@ Configure you Github in you command prompt/terminal for initilizing you git proc
 + push you commit:		`git push <ur branch>` (if u have a specified branch add that or, use main or master to push)
 + to check log:		`git log`
 
+### Enabling JSON1 extension on SQLite
+As of Python 3.9, the official Python installer on Windows already includes the JSON1 extension by default. If you're using an earlier version of Python or unofficial installers, you can do the following:
++ Download the [precompiled DLL](https://www.sqlite.org/download.html) that matches your Python installation (32-bit or 64-bit).
++ Locate your Python installation. By default, it should be in %localappdata%\Programs\Python\PythonXX, where XX is the Python version. For example, it's located in C:\Users\<username>\AppData\Local\Programs\Python\Python37. If you added Python installation directory to your PATH environment variable, you can run the command where python on a command prompt to locate it.
++ Enter the DLLs directory in your Python installation.
++ Rename (or delete) `sqlite3.dll` inside the `DLLs` directory.
++ Extract `sqlite3.dll` from the downloaded DLL archive and put it in the `DLLs` directory.
++ Now, the JSON1 extension should be ready to be used in Python and Django.
+
 
 
 ### To execute the project:
