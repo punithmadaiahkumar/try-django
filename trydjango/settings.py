@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     #'storages',
     # internal
     'articles',
+    'inventory',
     'meals',
     'recipes',
     'search',
