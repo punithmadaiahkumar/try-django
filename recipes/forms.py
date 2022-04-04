@@ -1,5 +1,6 @@
 from django import forms
 
+
 from .models import Recipe, RecipeIngredient, RecipeIngredientImage
 
 class RecipeIngredientImageForm(forms.ModelForm):
@@ -30,7 +31,6 @@ class RecipeForm(forms.ModelForm):
                 # "hx-trigger": "keyup changed delay:500ms",
                 # "hx-target": "#recipe-container",
                 # "hx-swap": "outerHTML"
-
             }
             self.fields[str(field)].widget.attrs.update(
                 new_data
@@ -39,6 +39,7 @@ class RecipeForm(forms.ModelForm):
         # self.fields['name'].widget.attrs.update({'class': 'form-control-2'})
         self.fields['description'].widget.attrs.update({'rows': '2'})
         self.fields['directions'].widget.attrs.update({'rows': '4'})
+
 
 class RecipeIngredientForm(forms.ModelForm):
     class Meta:

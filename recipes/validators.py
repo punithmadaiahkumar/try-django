@@ -2,11 +2,10 @@ import pint
 from django.core.exceptions import ValidationError
 from pint.errors import UndefinedUnitError
 
-
-valid_unit_measurments = ['pounds', 'lbs', 'oz', 'gram']
+valid_unit_measurements = ['pounds', 'lbs', 'oz', 'gram']
 
 def validate_unit_of_measure(value):
-    ureg = pint.UnitRegistry() 
+    ureg = pint.UnitRegistry()
     try:
         single_unit = ureg[value.lower()]
     except UndefinedUnitError as e:

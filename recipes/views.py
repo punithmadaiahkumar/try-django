@@ -1,15 +1,10 @@
-from audioop import reverse
-from email import header
-from re import template
-from typing_extensions import Self
-from wsgiref import headers
 from django.contrib.auth.decorators import login_required
-from django.forms.models import modelformset_factory #model form for querysets
+from django.forms.models import modelformset_factory # model form for querysets
 from django.urls import reverse
 from django.http import HttpResponse, Http404
 from django.shortcuts import redirect, render, get_object_or_404
 
-from .forms import RecipeForm, RecipeIngredientForm,  RecipeIngredientImageForm
+from .forms import RecipeForm, RecipeIngredientForm, RecipeIngredientImageForm
 from .models import Recipe, RecipeIngredient
 from .services import extract_text_via_ocr_service
 from .utils import (
@@ -29,11 +24,12 @@ def recipe_list_view(request):
 
 @login_required
 def recipe_detail_view(request, id=None):
-    hx_url = reverse("recipes:hx-detail", kwargs={"id": id})  
+    hx_url = reverse("recipes:hx-detail", kwargs={"id": id})
     context = {
         "hx_url": hx_url
     }
     return render(request, "recipes/detail.html", context) 
+
 
 @login_required
 def recipe_delete_view(request, id=None):
@@ -57,10 +53,11 @@ def recipe_delete_view(request, id=None):
     context = {
         "object": obj
     }
-    return render(request, "recipes/delete.html", context) 
+    return render(request, "recipes/delete.html", context)
+
 
 @login_required
-def recipe_ingredient_delete_view(request, parent_id=None, id=None):
+def recipe_incredient_delete_view(request, parent_id=None, id=None):
     try:
         obj = RecipeIngredient.objects.get(recipe__id=parent_id, id=id, recipe__user=request.user)
     except:
@@ -79,7 +76,9 @@ def recipe_ingredient_delete_view(request, parent_id=None, id=None):
     context = {
         "object": obj
     }
-    return render(request, "recipes/delete.html", context) 
+    return render(request, "recipes/delete.html", context)
+
+
 
 @login_required
 def recipe_detail_hx_view(request, id=None):
@@ -89,13 +88,12 @@ def recipe_detail_hx_view(request, id=None):
         obj = Recipe.objects.get(id=id, user=request.user)
     except:
         obj = None
-    if obj is None:
+    if obj is  None:
         return HttpResponse("Not found.")
     context = {
         "object": obj
     }
     return render(request, "recipes/partials/detail.html", context) 
-
 
 
 @login_required
@@ -118,7 +116,7 @@ def recipe_create_view(request):
             # }
             # return render(request, "recipes/partials/detail.html", context)
         return redirect(obj.get_absolute_url())
-    return render(request, "recipes/create-update.html", context) 
+    return render(request, "recipes/create-update.html", context)  
 
 @login_required
 def recipe_update_view(request, id=None):
@@ -135,7 +133,8 @@ def recipe_update_view(request, id=None):
         context['message'] = 'Data saved.'
     if request.htmx:
         return render(request, "recipes/partials/forms.html", context)
-    return render(request, "recipes/create-update.html", context)
+    return render(request, "recipes/create-update.html", context)  
+
 
 @login_required
 def recipe_ingredient_update_hx_view(request, parent_id=None, id=None):
@@ -169,7 +168,7 @@ def recipe_ingredient_update_hx_view(request, parent_id=None, id=None):
         new_obj.save()
         context['object'] = new_obj
         return render(request, "recipes/partials/ingredient-inline.html", context) 
-    return render(request, "recipes/partials/ingredient-form.html", context)
+    return render(request, "recipes/partials/ingredient-form.html", context) 
 
 
 
@@ -186,7 +185,7 @@ def recipe_ingredient_image_upload_view(request, parent_id=None):
     form = RecipeIngredientImageForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         obj = form.save(commit=False)
-        obj.recipe = parent_id
+        obj.recipe = parent_obj
         # obj.recipe_id = parent_id
         obj.save()
         # send image file -> microservice api
@@ -210,4 +209,5 @@ def recipe_ingredient_image_upload_view(request, parent_id=None):
             }
             return HttpResponse("Success", headers=headers)
         return redirect(success_url)
+
     return render(request, template_name, {"form":form})

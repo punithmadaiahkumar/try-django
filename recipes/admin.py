@@ -6,6 +6,7 @@ from .models import RecipeIngredient, Recipe, RecipeIngredientImage
 
 User = get_user_model()
 
+
 admin.site.register(RecipeIngredientImage)
 
 class RecipeIngredientInline(admin.StackedInline):
