@@ -13,7 +13,7 @@ def register_view(request):
 # Create your views here.
 def login_view(request):
     # future -> ?next=/articles/create/
-    if request.method == 'POST':
+    if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             user = form.get_user()
@@ -21,10 +21,11 @@ def login_view(request):
             return redirect('/')
     else:
         form = AuthenticationForm(request)
-    context ={
+    context = {
         "form": form
     }
     return render(request, "accounts/login.html", context)
+
 
 def logout_view(request):
     if request.method == "POST":
