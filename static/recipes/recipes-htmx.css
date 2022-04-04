@@ -1,10 +1,10 @@
-.htmx-indicator{
+.htmx-indicator {
     display: none;
 }
 .htmx-request .htmx-indicator {
     display: inline;
 }
-.htmk-inverted-indicator {
+.htmx-inverted-indicator {
     display: inline;
 }
 .htmx-request .htmx-inverted-indicator {
