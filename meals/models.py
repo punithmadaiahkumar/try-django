@@ -22,39 +22,39 @@ class MealStatus(models.TextChoices):
 
 
 
-
 class MealQuerySet(models.QuerySet):
     def by_user_id(self, user_id):
         return self.filter(user_id=user_id)
-
+    
     def by_user(self, user):
         return self.filter(user=user)
-
+    
     def pending(self):
         return self.filter(status=MealStatus.PENDING)
 
     def completed(self):
         return self.filter(status=MealStatus.COMPLETED)
-
+        
     def aborted(self):
         return self.filter(status=MealStatus.ABORTED)
-
+        
     def expired(self):
         return self.filter(status=MealStatus.EXPIRED)
 
     def in_queue(self, recipe_id):
         return self.pending().filter(recipe_id=recipe_id).exists()
 
+   
 class MealManager(models.Manager):
     def get_queryset(self):
         return MealQuerySet(self.model, using=self._db)
 
     def by_user_id(self, user_id):
         return self.get_queryset().by_user_id(user_id)
-
+    
     def by_user(self, user):
         return self.get_queryset().by_user(user)
-    
+
     def get_queue(self, user, prefetch_ingredients=False):
         qs = self.get_queryset().by_user(user).pending()
         if prefetch_ingredients:
@@ -81,7 +81,6 @@ class MealManager(models.Manager):
             added = True
         return added
 
-
 class Meal(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
@@ -102,4 +101,5 @@ def meal_post_save(sender, instance, created, *args, **kwargs):
             meal_removed.send(sender=sender, instance=instance)
         instance.prev_status = instance.status
         instance.save()
+
 post_save.connect(meal_post_save, sender=Meal)

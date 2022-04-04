@@ -8,7 +8,7 @@ from .models import Meal, MealStatus
 
 User = get_user_model()
 
-
+   
 
 class MealTestCase(TestCase):
     def setUp(self):
